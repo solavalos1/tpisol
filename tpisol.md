@@ -1,9 +1,13 @@
 ```mermaid
 %%{init: {
   'themeVariables': {
-    'fontSize': '22px'
+    'fontSize': '26px'
   },
-  'themeCSS': 'g.classGroup text, .edgeLabel, .edgeLabel text, .edgeLabel span, .relationshipLabel, .relationshipLabel text { font-size: 22px !important; }'
+  'flowchart': {
+    'nodeSpacing': 20,
+    'rankSpacing': 30
+  },
+  'themeCSS': '.node, .classGroup, .edgeLabel, .edgeLabel text, .edgeLabel span, .relationshipLabel, .relationshipLabel text { font-size: 26px !important; } g.classGroup text { font-size: 26px !important; }'
 }}%%
 classDiagram
     direction TB
