@@ -37,6 +37,33 @@ classDiagram
     class RobarCarta
     class ReciclarPozo
 
+    %% Estilos para resaltar las cajas
+    style JuegoSolitario fill:#eef4ff,stroke:#1d4ed8,stroke-width:2px
+    style Carta fill:#f8fafc,stroke:#334155,stroke-width:1.5px
+    style Mazo fill:#f8fafc,stroke:#334155,stroke-width:1.5px
+    style Piramide fill:#f8fafc,stroke:#334155,stroke-width:1.5px
+    style Pozo fill:#f8fafc,stroke:#334155,stroke-width:1.5px
+    style TiempoDeJuego fill:#f8fafc,stroke:#334155,stroke-width:1.5px
+    style ReglasDePuntaje fill:#f8fafc,stroke:#334155,stroke-width:1.5px
+    style RegistroDeRecords fill:#f8fafc,stroke:#334155,stroke-width:1.5px
+    style MovimientoInvalido fill:#fef2f2,stroke:#b91c1c,stroke-width:1.5px
+    style Error fill:#f1f5f9,stroke:#475569,stroke-width:1.5px
+
+    style UbicacionCarta fill:#fefce8,stroke:#a16207,stroke-width:1.5px
+    style UbicacionPiramide fill:#ffffff,stroke:#64748b,stroke-width:1.5px
+    style UbicacionPozo fill:#ffffff,stroke:#64748b,stroke-width:1.5px
+
+    style EstadoPartida fill:#fefce8,stroke:#a16207,stroke-width:1.5px
+    style EnCurso fill:#ffffff,stroke:#64748b,stroke-width:1.5px
+    style Ganada fill:#ffffff,stroke:#64748b,stroke-width:1.5px
+    style Perdida fill:#ffffff,stroke:#64748b,stroke-width:1.5px
+
+    style Movimiento fill:#fefce8,stroke:#a16207,stroke-width:1.5px
+    style EliminarRey fill:#ffffff,stroke:#64748b,stroke-width:1.5px
+    style EliminarPar fill:#ffffff,stroke:#64748b,stroke-width:1.5px
+    style RobarCarta fill:#ffffff,stroke:#64748b,stroke-width:1.5px
+    style ReciclarPozo fill:#ffffff,stroke:#64748b,stroke-width:1.5px
+
     %% Herencias
     Error <|-- MovimientoInvalido
     UbicacionCarta <|-- UbicacionPiramide
