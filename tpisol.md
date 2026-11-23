@@ -1,16 +1,9 @@
 ```mermaid
 %%{init: {
-  'theme': 'base',
   'themeVariables': {
-    'fontSize': '20px',
-    'primaryColor': '#e0e7ff',
-    'primaryTextColor': '#0f172a',
-    'primaryBorderColor': '#1e3a8a',
-    'lineColor': '#0f172a',
-    'secondaryColor': '#fef3c7',
-    'tertiaryColor': '#f1f5f9'
+    'fontSize': '22px'
   },
-  'themeCSS': 'g.classGroup text { font-size: 20px !important; font-weight: 700 !important; fill: #0f172a !important; } g.classGroup rect { fill: #f8fafc !important; stroke: #1e293b !important; stroke-width: 2px !important; } .edgeLabel, .edgeLabel text, .edgeLabel span, .relationshipLabel, .relationshipLabel text { font-size: 18px !important; font-weight: 700 !important; fill: #0f172a !important; color: #0f172a !important; background-color: #ffffff !important; }'
+  'themeCSS': 'g.classGroup text, .edgeLabel, .edgeLabel text, .edgeLabel span, .relationshipLabel, .relationshipLabel text { font-size: 22px !important; }'
 }}%%
 classDiagram
     direction TB
@@ -49,13 +42,6 @@ classDiagram
     class EliminarPar
     class RobarCarta
     class ReciclarPozo
-
-    style JuegoSolitario fill:#dbeafe,stroke:#1d4ed8,stroke-width:2.5px,color:#0f172a
-    style MovimientoInvalido fill:#fee2e2,stroke:#b91c1c,stroke-width:2px,color:#0f172a
-    style Error fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#0f172a
-    style UbicacionCarta fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#0f172a
-    style EstadoPartida fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#0f172a
-    style Movimiento fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#0f172a
 
     %% Herencias
     Error <|-- MovimientoInvalido
