@@ -1,3 +1,4 @@
+```mermaid
 classDiagram
     direction TB
 
@@ -73,3 +74,4 @@ classDiagram
     RobarCarta ..> MovimientoInvalido : señala
     ReciclarPozo ..> MovimientoInvalido : señala
     EstadoPartida ..> MovimientoInvalido : señala
+```
