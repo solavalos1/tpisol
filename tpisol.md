@@ -7,19 +7,21 @@
     "themeVariables": {
         "darkMode": true,
         "fontFamily": "Arial",
-        "fontSize": "24px",
+        "fontSize": "28px",
         "background": "#0D1117",
         "primaryColor": "#FFFFFF",
         "primaryTextColor": "#000000",
         "primaryBorderColor": "#FFFFFF",
-        "secondaryColor": "#FFFFFF",
-        "tertiaryColor": "#FFFFFF",
+        "secondaryColor": "#0D1117",
+        "secondaryTextColor": "#FFFFFF",
+        "tertiaryColor": "#0D1117",
+        "tertiaryTextColor": "#FFFFFF",
         "lineColor": "#FFFFFF",
         "textColor": "#FFFFFF",
         "classText": "#000000",
         "edgeLabelBackground": "#0D1117"
     },
-    "themeCSS": ".relation { stroke: #FFFFFF !important; stroke-width: 2px !important; } .edgeLabel, .edgeLabel text, .edgeLabel span, .edgeLabel p, .cardinality, .cardinality text, .relationLabel, .relationLabel text { fill: #FFFFFF !important; color: #FFFFFF !important; font-size: 24px !important; } .edgeTerminals, .edgeTerminals text { fill: #FFFFFF !important; color: #FFFFFF !important; } marker path { stroke: #FFFFFF !important; } .classTitle { font-weight: bold !important; }",
+    "themeCSS": ".relation { stroke: #FFFFFF !important; stroke-width: 2.5px !important; } .edgeLabel rect, .labelBkg { fill: #0D1117 !important; opacity: 1 !important; } .edgeLabel, .edgeLabel span, .edgeLabel p, .edgeLabel div { background-color: #0D1117 !important; color: #FFFFFF !important; } .edgeLabel text, .relationLabel text, .cardinality text, .edgeTerminals text { fill: #FFFFFF !important; font-size: 28px !important; } marker path { stroke: #FFFFFF !important; } .classTitle { font-weight: bold !important; }",
     "class": {
         "hideEmptyMembersBox": true
     }
@@ -115,7 +117,7 @@ classDiagram
     ReciclarPozo ..> MovimientoInvalido : señala
     EstadoPartida ..> MovimientoInvalido : señala
 
-    %% Estilos de las clases
+    %% Estilos
     classDef blanca fill:#FFFFFF,stroke:#FFFFFF,stroke-width:2px,color:#000000,font-weight:bold
 
     cssClass "JuegoSolitario" blanca
@@ -141,4 +143,3 @@ classDiagram
     cssClass "Error" blanca
     cssClass "MovimientoInvalido" blanca
 ```
-
