@@ -22,6 +22,7 @@
 classDiagram
     direction TB
 
+    %% Clases principales
     class JuegoSolitario
     class Carta
     class Mazo
@@ -36,6 +37,7 @@ classDiagram
         <<Pharo Kernel>>
     }
 
+    %% Jerarquia de ubicaciones
     class UbicacionCarta {
         <<abstract>>
     }
@@ -43,6 +45,7 @@ classDiagram
     class UbicacionPiramide
     class UbicacionPozo
 
+    %% Jerarquia de estados
     class EstadoPartida {
         <<abstract>>
     }
@@ -51,6 +54,7 @@ classDiagram
     class Ganada
     class Perdida
 
+    %% Jerarquia de movimientos
     class Movimiento {
         <<abstract>>
     }
@@ -75,7 +79,7 @@ classDiagram
     Movimiento <|-- RobarCarta
     Movimiento <|-- ReciclarPozo
 
-    %% Relaciones principales
+    %% Composiciones y asociaciones principales
     JuegoSolitario *-- "1" Mazo : mazo
     JuegoSolitario *-- "1" Piramide : piramide
     JuegoSolitario *-- "1" Pozo : pozo
@@ -105,19 +109,46 @@ classDiagram
     ReciclarPozo ..> MovimientoInvalido
     EstadoPartida ..> MovimientoInvalido
 
-    %% Estilos
-    classDef principal fill:#DCE8F5,stroke:#34495E,stroke-width:2px,color:#17202A,font-weight:bold
+    %% Definicion de estilos
+    classDef principal fill:#DCE8F5,stroke:#34495E,stroke-width:2px,color:#17202A
     classDef dominio fill:#FFFFFF,stroke:#566573,color:#17202A
     classDef estados fill:#E8F3E8,stroke:#527A52,color:#17202A
     classDef movimientos fill:#E4EDF9,stroke:#5276A5,color:#17202A
     classDef ubicaciones fill:#FFF1D9,stroke:#A68A4E,color:#17202A
     classDef errores fill:#F8E5E5,stroke:#A65C5C,color:#17202A
 
-    class JuegoSolitario principal
-    class Carta,Mazo,Piramide,Pozo,TiempoDeJuego,ReglasDePuntaje,RegistroDeRecords dominio
-    class EstadoPartida,EnCurso,Ganada,Perdida estados
-    class Movimiento,EliminarRey,EliminarPar,RobarCarta,ReciclarPozo movimientos
-    class UbicacionCarta,UbicacionPiramide,UbicacionPozo ubicaciones
-    class Error,MovimientoInvalido errores
+    %% Clase coordinadora
+    cssClass "JuegoSolitario" principal
+
+    %% Entidades y servicios del dominio
+    cssClass "Carta" dominio
+    cssClass "Mazo" dominio
+    cssClass "Piramide" dominio
+    cssClass "Pozo" dominio
+    cssClass "TiempoDeJuego" dominio
+    cssClass "ReglasDePuntaje" dominio
+    cssClass "RegistroDeRecords" dominio
+
+    %% Estados
+    cssClass "EstadoPartida" estados
+    cssClass "EnCurso" estados
+    cssClass "Ganada" estados
+    cssClass "Perdida" estados
+
+    %% Movimientos
+    cssClass "Movimiento" movimientos
+    cssClass "EliminarRey" movimientos
+    cssClass "EliminarPar" movimientos
+    cssClass "RobarCarta" movimientos
+    cssClass "ReciclarPozo" movimientos
+
+    %% Ubicaciones
+    cssClass "UbicacionCarta" ubicaciones
+    cssClass "UbicacionPiramide" ubicaciones
+    cssClass "UbicacionPozo" ubicaciones
+
+    %% Excepciones
+    cssClass "Error" errores
+    cssClass "MovimientoInvalido" errores
 ```
 
