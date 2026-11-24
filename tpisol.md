@@ -5,15 +5,21 @@
 %%{init: {
     "theme": "base",
     "themeVariables": {
+        "darkMode": true,
         "fontFamily": "Arial",
-        "fontSize": "20px",
+        "fontSize": "24px",
+        "background": "#0D1117",
         "primaryColor": "#FFFFFF",
-        "primaryTextColor": "#17202A",
-        "primaryBorderColor": "#34495E",
-        "lineColor": "#34495E",
-        "background": "#FFFFFF",
-        "edgeLabelBackground": "#FFFFFF"
+        "primaryTextColor": "#000000",
+        "primaryBorderColor": "#FFFFFF",
+        "secondaryColor": "#FFFFFF",
+        "tertiaryColor": "#FFFFFF",
+        "lineColor": "#FFFFFF",
+        "textColor": "#FFFFFF",
+        "classText": "#000000",
+        "edgeLabelBackground": "#0D1117"
     },
+    "themeCSS": ".relation { stroke: #FFFFFF !important; stroke-width: 2px !important; } .edgeLabel, .edgeLabel text, .edgeLabel span, .edgeLabel p, .cardinality, .cardinality text, .relationLabel, .relationLabel text { fill: #FFFFFF !important; color: #FFFFFF !important; font-size: 24px !important; } .edgeTerminals, .edgeTerminals text { fill: #FFFFFF !important; color: #FFFFFF !important; } marker path { stroke: #FFFFFF !important; } .classTitle { font-weight: bold !important; }",
     "class": {
         "hideEmptyMembersBox": true
     }
@@ -86,69 +92,53 @@ classDiagram
     JuegoSolitario *-- "1" TiempoDeJuego : tiempo
     JuegoSolitario *-- "1" EstadoPartida : estado
     JuegoSolitario *-- "0..*" Movimiento : historial
-    JuegoSolitario --> "1" RegistroDeRecords
-    JuegoSolitario ..> ReglasDePuntaje
-    JuegoSolitario ..> MovimientoInvalido
+    JuegoSolitario --> "1" RegistroDeRecords : registroDeRecords
+    JuegoSolitario ..> ReglasDePuntaje : consulta
+    JuegoSolitario ..> MovimientoInvalido : señala
 
     %% Relaciones de las cartas
-    Mazo o-- "0..52" Carta
-    Piramide o-- "0..28" Carta
+    Mazo o-- "0..52" Carta : cartas
+    Piramide o-- "0..28" Carta : cartas
     Pozo --> "1" Mazo : reserva
     Pozo o-- "0..24" Carta : descarte
 
     %% Relaciones de los movimientos
-    EliminarRey --> "1" UbicacionCarta
-    EliminarPar --> "2" UbicacionCarta
+    EliminarRey --> "1" UbicacionCarta : ubicacion
+    EliminarPar --> "2" UbicacionCarta : ubicacionA / ubicacionB
 
-    EliminarRey ..> ReglasDePuntaje
-    EliminarPar ..> ReglasDePuntaje
+    EliminarRey ..> ReglasDePuntaje : consulta
+    EliminarPar ..> ReglasDePuntaje : consulta
 
-    EliminarRey ..> MovimientoInvalido
-    EliminarPar ..> MovimientoInvalido
-    RobarCarta ..> MovimientoInvalido
-    ReciclarPozo ..> MovimientoInvalido
-    EstadoPartida ..> MovimientoInvalido
+    EliminarRey ..> MovimientoInvalido : señala
+    EliminarPar ..> MovimientoInvalido : señala
+    RobarCarta ..> MovimientoInvalido : señala
+    ReciclarPozo ..> MovimientoInvalido : señala
+    EstadoPartida ..> MovimientoInvalido : señala
 
-    %% Definicion de estilos
-    classDef principal fill:#DCE8F5,stroke:#34495E,stroke-width:2px,color:#17202A
-    classDef dominio fill:#FFFFFF,stroke:#566573,color:#17202A
-    classDef estados fill:#E8F3E8,stroke:#527A52,color:#17202A
-    classDef movimientos fill:#E4EDF9,stroke:#5276A5,color:#17202A
-    classDef ubicaciones fill:#FFF1D9,stroke:#A68A4E,color:#17202A
-    classDef errores fill:#F8E5E5,stroke:#A65C5C,color:#17202A
+    %% Estilos de las clases
+    classDef blanca fill:#FFFFFF,stroke:#FFFFFF,stroke-width:2px,color:#000000,font-weight:bold
 
-    %% Clase coordinadora
-    cssClass "JuegoSolitario" principal
-
-    %% Entidades y servicios del dominio
-    cssClass "Carta" dominio
-    cssClass "Mazo" dominio
-    cssClass "Piramide" dominio
-    cssClass "Pozo" dominio
-    cssClass "TiempoDeJuego" dominio
-    cssClass "ReglasDePuntaje" dominio
-    cssClass "RegistroDeRecords" dominio
-
-    %% Estados
-    cssClass "EstadoPartida" estados
-    cssClass "EnCurso" estados
-    cssClass "Ganada" estados
-    cssClass "Perdida" estados
-
-    %% Movimientos
-    cssClass "Movimiento" movimientos
-    cssClass "EliminarRey" movimientos
-    cssClass "EliminarPar" movimientos
-    cssClass "RobarCarta" movimientos
-    cssClass "ReciclarPozo" movimientos
-
-    %% Ubicaciones
-    cssClass "UbicacionCarta" ubicaciones
-    cssClass "UbicacionPiramide" ubicaciones
-    cssClass "UbicacionPozo" ubicaciones
-
-    %% Excepciones
-    cssClass "Error" errores
-    cssClass "MovimientoInvalido" errores
+    cssClass "JuegoSolitario" blanca
+    cssClass "Carta" blanca
+    cssClass "Mazo" blanca
+    cssClass "Piramide" blanca
+    cssClass "Pozo" blanca
+    cssClass "TiempoDeJuego" blanca
+    cssClass "ReglasDePuntaje" blanca
+    cssClass "RegistroDeRecords" blanca
+    cssClass "EstadoPartida" blanca
+    cssClass "EnCurso" blanca
+    cssClass "Ganada" blanca
+    cssClass "Perdida" blanca
+    cssClass "Movimiento" blanca
+    cssClass "EliminarRey" blanca
+    cssClass "EliminarPar" blanca
+    cssClass "RobarCarta" blanca
+    cssClass "ReciclarPozo" blanca
+    cssClass "UbicacionCarta" blanca
+    cssClass "UbicacionPiramide" blanca
+    cssClass "UbicacionPozo" blanca
+    cssClass "Error" blanca
+    cssClass "MovimientoInvalido" blanca
 ```
 
